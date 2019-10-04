@@ -7,8 +7,6 @@ void CPenView::OnDraw(CDC* pDC)
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
-
-	// TODO: 여기에 원시 데이터에 대한 그리기 코드를 추가합니다.
 	int n = pDoc->m_oa.GetSize();
 	CLine* p;
 	for (int i = 0; i < n; i++) {
