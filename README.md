@@ -1,5 +1,22 @@
 # SDLPen
 ## SDLPen 작성방법
+### 그리기
+void CPenView::OnDraw(CDC* pDC)
+{
+	CPenDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+
+	// TODO: 여기에 원시 데이터에 대한 그리기 코드를 추가합니다.
+	int n = pDoc->m_oa.GetSize();
+	CLine* p;
+	for (int i = 0; i < n; i++) {
+		p = (CLine*)pDoc->m_oa[i];
+		p->Draw(pDC);
+	}
+}
+
 ### 마우스 무브
 void CPenView::OnMouseMove(UINT nFlags, CPoint point)
 {
